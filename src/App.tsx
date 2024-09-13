@@ -1,8 +1,8 @@
 function App() {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="bg-white p-4 rounded-md">
-        <h1 className="hover:bg-red-400 transition-colors rotate-6">
+    <div className="flex min-h-screen items-center justify-center bg-gray-100">
+      <div className="rounded-md bg-white p-4">
+        <h1 className="my-2 size-full rotate-6 transition-colors hover:bg-red-400">
           Hello Offer Wise!
         </h1>
       </div>
