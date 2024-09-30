@@ -1,29 +1,21 @@
-import { Button } from "@nextui-org/button";
-import { Pagination, Switch } from "@nextui-org/react";
+import { NextUIProvider } from "@nextui-org/react";
+import { Route, Routes, useHref, useNavigate } from "react-router-dom";
+
+import { About, HomePage, NotFound } from "./pages";
 
 function App() {
-  const handleSwitch = (event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(event.target.checked);
-  };
+  const navigate = useNavigate();
+
   return (
-    <div className="flex min-h-screen items-center justify-center gap-x-4">
-      <div className="rounded-md">
-        <h1 className="my-2">Hello Offer Wise!</h1>
-      </div>
-      <div>
-        <Button>Press me</Button>
-      </div>
-      <div>
-        <Pagination total={10} initialPage={1} />
-      </div>
-      <div>
-        <Switch
-          defaultSelected
-          aria-label="Automatic updates"
-          onChange={handleSwitch}
-        />
-      </div>
-    </div>
+    <NextUIProvider navigate={navigate} useHref={useHref}>
+      <main className="bg-background text-foreground light">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/not-found" element={<NotFound />} />
+        </Routes>
+      </main>
+    </NextUIProvider>
   );
 }
 

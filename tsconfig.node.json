@@ -1,9 +1,7 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "lib": [
-      "ESNext",
-    ],
+    "lib": ["ESNext"],
     "module": "ESNext",
     "skipLibCheck": true,
     /* Bundler mode */
@@ -16,9 +14,7 @@
     "strict": true,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
-    "noFallthroughCasesInSwitch": true,
+    "noFallthroughCasesInSwitch": true
   },
-  "include": [
-    "vite.config.ts"
-  ]
+  "include": ["vite.config.ts"]
 }
