@@ -1,5 +1,4 @@
 import { Button, Pagination, Switch } from "@nextui-org/react";
-import { useNavigate } from "react-router-dom";
 
 export const HomePage = () => {
   const navigate = useNavigate();
