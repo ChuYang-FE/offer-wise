@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [
     react(),
     AutoImport({
-      imports: ["react", "react-router-dom"],
+      imports: ["react", "react-router-dom", "react-i18next"],
       dts: "src/auto-imports.d.ts",
     }),
   ],
