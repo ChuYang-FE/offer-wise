@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@nextui-org/react": "^2.4.8",
+    "ahooks": "^3.8.1",
     "framer-motion": "^11.11.9",
     "i18next": "^23.16.0",
     "react": "^18.3.1",
