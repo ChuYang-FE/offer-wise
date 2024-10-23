@@ -2,6 +2,28 @@ import { Switch } from "@nextui-org/react";
 
 import { InputChangeEvent } from "../../../types/common";
 
+interface DarkModeSwitchProps {
+  onDarkModeChange: (event: InputChangeEvent) => void;
+}
+
+export const DarkModeSwitch = ({ onDarkModeChange }: DarkModeSwitchProps) => {
+  const [isDarkMode] = useLocalStorageState<boolean>("dark-mode");
+
+  return (
+    <>
+      <Switch
+        defaultSelected={isDarkMode || false}
+        size="lg"
+        color="default"
+        thumbIcon={({ isSelected, className }) =>
+          isSelected ? <MoonIcon /> : <SunIcon />
+        }
+        onChange={onDarkModeChange}
+      ></Switch>
+    </>
+  );
+};
+
 const MoonIcon = () => (
   <svg
     aria-hidden="true"
@@ -30,23 +52,3 @@ const SunIcon = () => (
     </g>
   </svg>
 );
-
-interface DarkModeSwitchProps {
-  onDarkModeChange: (event: InputChangeEvent) => void;
-}
-
-export const DarkModeSwitch = ({ onDarkModeChange }: DarkModeSwitchProps) => {
-  const [isDarkMode] = useLocalStorageState<boolean>("dark-mode");
-
-  return (
-    <Switch
-      defaultSelected={isDarkMode || false}
-      size="lg"
-      color="secondary"
-      thumbIcon={({ isSelected, className }) =>
-        isSelected ? <MoonIcon /> : <SunIcon />
-      }
-      onChange={onDarkModeChange}
-    ></Switch>
-  );
-};

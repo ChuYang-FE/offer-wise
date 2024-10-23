@@ -1,50 +1,47 @@
-# React + TypeScript + Vite
+# Offer 智选 - Offer Wise
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+大数据和人工智能助你选出最适合你的 Offer。
 
-Currently, two official plugins are available:
+## 主要功能 💡
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 接受 个人及 Offer 的关键信息的输入
+- 利用大数据和人工智能，给你的 Offer 进行评估
+- 给出 Offer 的综合评分及选择建议
 
-## Expanding the ESLint configuration
+## ToDo List 📋
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- i18n
+  - 中文
+  - 英文
+  - 储存用户选择
+- Dark Mode
+  - 深浅色模式切换
+  - 储存用户选择
+- 主题颜色
+  - 全局设置
+  - 相应的深浅色模式
+- 用户输入
+  - 工作经验
+  - Offer 薪资（基本薪资、年终奖、签字费、股票期权）
+  - 其他福利（如健康保险、年假等）
+  - 工作时长
+  - 工作生活平衡（如远程工作选项、灵活工作时间）
+  - 城市
+  - 所属行业
+- 数据获取
+  - 城市平均薪资
+  - 城市行业平均薪资
+  - 城市发展水平
+    - 经济发展：GDP、就业率、平均收入等
+    - 基础设施：交通便利性、公共设施质量等
+  - 城市生活成本
+    - 住房成本：房租、中位数房价等
+    - 日常开销：食品、交通、娱乐等费用
+  - 城市人类发展指数
+  - 城市宜居指数
+    - 环境质量：空气质量、水质等
+    - 安全性：犯罪率、自然灾害风险等
+- 结论生成
+  - 评分
+  - 分析
+  - 建议
