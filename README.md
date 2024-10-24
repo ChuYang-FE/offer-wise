@@ -1,4 +1,4 @@
-# Offer 智选 - Offer Wise
+# Offer  智选 - Offer Wise
 
 大数据和人工智能助你选出最适合你的 Offer。
 
@@ -8,19 +8,48 @@
 - 利用大数据和人工智能，给你的 Offer 进行评估
 - 给出 Offer 的综合评分及选择建议
 
-## ToDo List 📋
+## 技术架构 TODO List 🛠️
 
-- i18n
-  - 中文
-  - 英文
-  - 储存用户选择
+- 项目技术选型
+  - [x] **Vite** - 构建工具
+  - [x] **React** - 前端框架
+  - [x] **TypeScript** - 类型保护
+  - [x] **Tailwind CSS** - CSS 框架
+  - [x] **NextUI** - React 组件库
+- ESLint
+  - [x] TailwindCSS 类提示及类排序
+  - [x] React Hooks 规则
+  - [x] 依赖包自动排序
+- 路由
+  - [x] React Router
+- 依赖包免导入
+  - [x] react
+  - [x] react-router-dom
+  - [x] react-i18next
+  - [x] ahooks
+- 国际化 i18n
+  - [x] 中文
+  - [x] 英文
+  - [x] 储存用户选择
 - Dark Mode
-  - 深浅色模式切换
-  - 储存用户选择
+  - [x] 深浅色模式切换
+  - [x] 储存用户选择
 - 主题颜色
-  - 全局设置
-  - 相应的深浅色模式
-- 用户输入
+  - [ ] 全局设置
+  - [ ] 相应的深浅色模式
+- README.md
+  - [x] 中文
+  - [ ] 英文
+- CICD
+  - Github Action
+  - 在线浏览部署
+- 测试
+  - Unit Test
+  - Integration Test
+
+## 功能 TODO List 📝
+
+- [ ] 用户输入
   - 工作经验
   - Offer 薪资（基本薪资、年终奖、签字费、股票期权）
   - 其他福利（如健康保险、年假等）
@@ -28,7 +57,7 @@
   - 工作生活平衡（如远程工作选项、灵活工作时间）
   - 城市
   - 所属行业
-- 数据获取
+- [ ] 数据获取
   - 城市平均薪资
   - 城市行业平均薪资
   - 城市发展水平
@@ -41,7 +70,28 @@
   - 城市宜居指数
     - 环境质量：空气质量、水质等
     - 安全性：犯罪率、自然灾害风险等
-- 结论生成
+- [ ] 结论生成
   - 评分
   - 分析
   - 建议
+
+## 安装和使用 🚀
+
+1. 克隆仓库
+
+   ```bash
+   git clone https://github.com/ChuYang-FE/offer-wise.git
+   ```
+
+2. 安装依赖
+
+   ```bash
+   cd offer-wise
+   pnpm install
+   ```
+
+3. 启动开发服务器
+
+   ```bash
+   pnpm run dev
+   ```
