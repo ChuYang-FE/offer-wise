@@ -3,7 +3,7 @@ import { Card, CardHeader } from "@nextui-org/react";
 import OfferWiseIcon from "../../../offerWise.svg";
 import { InputChangeEvent } from "../../../types/common";
 import { DarkModeSwitch } from "./DarkModeSwitch";
-import LanguageSelector from "./LanguageSelector";
+import { LanguageSelector } from "./LanguageSelector";
 
 interface HeaderProps {
   onDarkModeChange: (event: InputChangeEvent) => void;

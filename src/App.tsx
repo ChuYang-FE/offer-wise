@@ -15,17 +15,12 @@ function App() {
     }
   );
 
-  const [storageLanguage, setStorageLanguage] = useLocalStorageState<string>(
-    "language",
-    {
-      defaultValue: "zh-CN",
-    }
-  );
+  const [storageLanguage, setStorageLanguage] =
+    useLocalStorageState<string>("language");
 
   useEffect(() => {
-    setStorageLanguage(storageLanguage);
     i18n.changeLanguage(storageLanguage);
-  }, [i18n, setStorageLanguage, storageLanguage]);
+  }, []);
 
   const handleLanguageChange = (lng: string) => {
     i18n.changeLanguage(lng);
@@ -39,9 +34,9 @@ function App() {
   return (
     <NextUIProvider navigate={navigate} useHref={useHref}>
       <div
-        className={`flex min-h-screen flex-col bg-background text-foreground ${
+        className={`${
           isDarkMode ? "dark" : "light"
-        }`}
+        } flex min-h-screen flex-col bg-background text-foreground`}
       >
         <header className="flex w-full justify-between bg-slate-300 p-2">
           <Header

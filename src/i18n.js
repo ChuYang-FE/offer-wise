@@ -16,11 +16,31 @@ const resources = {
   },
 };
 
+const defaultLanguage = "zh-CN";
+
+const storedLanguage = localStorage.getItem("language");
+
+/**
+ * In Chrome's localStorage, strings stored using the native `localStorage.setItem` method
+ * do not have additional quotation marks, whereas strings stored using ahook's `useLocalStorage`
+ * include extra quotation marks. e.g. '"zh-CN"'
+ *
+ * To prevent i18n text flickering when the page refreshes and the language is reloaded,
+ * it's necessary to use JSON.parse to standardize the format.
+ */
+const appLanguage = storedLanguage
+  ? JSON.parse(storedLanguage) // '"zh-CN"' -> 'zh-CN'
+  : defaultLanguage;
+
+if (!localStorage.getItem("language")) {
+  localStorage.setItem("language", JSON.stringify(defaultLanguage));
+}
+
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
     resources,
-    lng: "zh-CN", // language to use, more information here: https://www.i18next.com/overview/configuration-options#languages-namespaces-resources
+    lng: appLanguage, // language to use, more information here: https://www.i18next.com/overview/configuration-options#languages-namespaces-resources
     // you can use the i18n.changeLanguage function to change the language manually: https://www.i18next.com/overview/api#changelanguage
     // if you're using a language detector, do not define the lng option
 

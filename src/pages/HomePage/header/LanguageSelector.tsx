@@ -19,10 +19,10 @@ const LANGUAGES = [
   },
 ];
 
-const LanguageSelector = ({ onLanguageChange }: LanguageSeletorProps) => {
-  const [storageLanguage] = useLocalStorageState<string | undefined>(
-    "language"
-  );
+export const LanguageSelector = ({
+  onLanguageChange,
+}: LanguageSeletorProps) => {
+  const [storageLanguage] = useLocalStorageState<string>("language");
 
   return (
     <Select
@@ -38,5 +38,3 @@ const LanguageSelector = ({ onLanguageChange }: LanguageSeletorProps) => {
     </Select>
   );
 };
-
-export default LanguageSelector;
