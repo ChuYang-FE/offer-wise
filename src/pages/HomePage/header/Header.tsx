@@ -15,12 +15,16 @@ export const Header: React.FC<HeaderProps> = ({
   onLanguageChange,
 }) => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   return (
     <div className="flex w-full justify-between">
       <div>
         <Card>
-          <CardHeader className="flex gap-1">
+          <CardHeader
+            className="flex cursor-pointer gap-1 hover:opacity-80"
+            onClick={() => navigate("/")}
+          >
             <img src={OfferWiseIcon} alt="Offer Wise Icon" className="size-4" />
             <div className="flex flex-col">
               <p className="text-sm">{t("offerWise")}</p>
