@@ -2,6 +2,7 @@ import { Button } from "@nextui-org/react";
 
 export const HomePage = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   return (
     <div className="flex flex-col items-center justify-center gap-y-4">
@@ -11,7 +12,7 @@ export const HomePage = () => {
             navigate("/not-found");
           }}
         >
-          Go to Not Found
+          {t("goToNotFound")}
         </Button>
       </div>
       <div>
@@ -20,7 +21,7 @@ export const HomePage = () => {
             navigate("/about");
           }}
         >
-          Go to About
+          {t("goToAbout")}
         </Button>
       </div>
     </div>

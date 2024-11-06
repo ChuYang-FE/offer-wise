@@ -1,4 +1,4 @@
-import { NextUIProvider } from "@nextui-org/react";
+import { Avatar, Chip, NextUIProvider } from "@nextui-org/react";
 
 import { About, HomePage, NotFound } from "./pages";
 import { Header } from "./pages/HomePage/header";
@@ -59,7 +59,20 @@ function App() {
           <section className=""></section>
         </main>
         <footer className="flex w-full justify-center p-2">
-          this is footer
+          <Chip
+            variant="flat"
+            avatar={
+              <Avatar
+                name={storageLanguage === "zh-CN" ? "羊小羊" : "William Tan"}
+                size="sm"
+                getInitials={(name) => name.charAt(0)}
+              />
+            }
+          >
+            {t("footer_creator", {
+              name: storageLanguage === "zh-CN" ? "羊小羊" : "William Tan",
+            })}
+          </Chip>
         </footer>
       </div>
     </NextUIProvider>

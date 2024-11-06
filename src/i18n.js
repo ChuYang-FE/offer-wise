@@ -29,7 +29,7 @@ const storedLanguage = localStorage.getItem("language");
  * it's necessary to use JSON.parse to standardize the format.
  */
 const appLanguage = storedLanguage
-  ? JSON.parse(storedLanguage) // '"zh-CN"' -> 'zh-CN'
+  ? JSON.parse(storedLanguage) // '"zh-CN"' -> "zh-CN"
   : defaultLanguage;
 
 if (!localStorage.getItem("language")) {

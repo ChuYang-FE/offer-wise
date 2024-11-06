@@ -1,4 +1,10 @@
 {
   "offerWise": "Offer Wise",
-  "offerWiseDesc": "Big data and AI help you choose the best offer for you."
+  "offerWiseDesc": "Big data and AI help you choose the best offer for you.",
+  "notFound": "Sorry, the page you requested could not be found.",
+  "aboutMe": "About Me",
+  "footer_creator": "{{name}}",
+  "goToNotFound": "Go to 404 page",
+  "goToAbout": "Go to About Me page",
+  "goHome": "Go Home"
 }
