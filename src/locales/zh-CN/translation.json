@@ -1,10 +1,11 @@
 {
-  "offerWise": "智选Offer",
-  "offerWiseDesc": "大数据和人工智能助您选出最适合您的Offer。",
+  "offerWise": "智选 Offer",
+  "offerWiseDesc": "大数据和人工智能助您选出最适合您的 Offer。",
   "notFound": "抱歉，您请求的页面无法找到。",
   "aboutMe": "关于我",
   "footer_creator": "{{name}}",
   "goToNotFound": "前往404页面",
   "goToAbout": "前往关于我页面",
-  "goHome": "回到首页"
+  "goHome": "回到首页",
+  "github": "我的 GitHub"
 }

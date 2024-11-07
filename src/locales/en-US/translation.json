@@ -6,5 +6,6 @@
   "footer_creator": "{{name}}",
   "goToNotFound": "Go to 404 page",
   "goToAbout": "Go to About Me page",
-  "goHome": "Go Home"
+  "goHome": "Go Home",
+  "github": "My GitHub"
 }

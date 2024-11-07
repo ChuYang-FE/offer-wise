@@ -1,6 +1,6 @@
-import { Card, CardHeader } from "@nextui-org/react";
+import { Link, User } from "@nextui-org/react";
 
-import OfferWiseIcon from "../../../offerWise.svg";
+import myAvatar from "../../../images/avatar.jpg";
 import { InputChangeEvent } from "../../../types/common";
 import { DarkModeSwitch } from "./DarkModeSwitch";
 import { LanguageSelector } from "./LanguageSelector";
@@ -15,24 +15,32 @@ export const Header: React.FC<HeaderProps> = ({
   onLanguageChange,
 }) => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
+
+  const [storageLanguage] = useLocalStorageState<string>("language", {
+    listenStorageChange: true,
+  });
+
+  const localizedName = storageLanguage === "zh-CN" ? "羊小羊" : "William Tan";
 
   return (
     <div className="flex w-full justify-between">
       <div>
-        <Card>
-          <CardHeader
-            className="flex cursor-pointer gap-1 hover:opacity-80"
-            onClick={() => navigate("/")}
-          >
-            <img src={OfferWiseIcon} alt="Offer Wise Icon" className="size-4" />
-            <div className="flex flex-col">
-              <p className="text-sm">{t("offerWise")}</p>
-            </div>
-          </CardHeader>
-        </Card>
+        <User
+          className="flex items-center justify-center"
+          name={localizedName}
+          description={
+            <Link href="https://chuyang-fe.github.io/" size="sm" isExternal>
+              {t("github")}
+            </Link>
+          }
+          avatarProps={{
+            src: myAvatar,
+            isBordered: true,
+            radius: "sm",
+          }}
+        />
       </div>
-      <div className="flex justify-center">
+      <div className="flex items-center justify-center">
         <DarkModeSwitch onDarkModeChange={onDarkModeChange} />
         <LanguageSelector onLanguageChange={onLanguageChange} />
       </div>
