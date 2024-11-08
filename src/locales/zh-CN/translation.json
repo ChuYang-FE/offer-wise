@@ -3,9 +3,17 @@
   "offerWiseDesc": "大数据和人工智能助您选出最适合您的 Offer。",
   "notFound": "抱歉，您请求的页面无法找到。",
   "aboutMe": "关于我",
-  "footer_creator": "{{name}}",
+  "footer.creator": "{{name}}",
   "goToNotFound": "前往404页面",
   "goToAbout": "前往关于我页面",
   "goHome": "回到首页",
-  "github": "我的 GitHub"
+  "heresMy": "这是我的",
+  "github": "GitHub",
+  "jobPosition.FE": "前端开发工程师",
+  "personalInfo.localizedName": "羊小羊",
+  "personalInfo.description": "前端开发工程师，热爱编程，喜欢折腾，乐于分享。",
+  "personalInfo.following": "关注",
+  "personalInfo.followers": "粉丝",
+  "action.follow": "关注",
+  "action.unfollow": "取消关注"
 }

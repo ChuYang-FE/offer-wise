@@ -63,15 +63,13 @@ function App() {
             variant="flat"
             avatar={
               <Avatar
-                name={storageLanguage === "zh-CN" ? "羊小羊" : "William Tan"}
+                name={t("personalInfo.localizedName")}
                 size="sm"
                 getInitials={(name) => name.charAt(0)}
               />
             }
           >
-            {t("footer_creator", {
-              name: storageLanguage === "zh-CN" ? "羊小羊" : "William Tan",
-            })}
+            {t("personalInfo.localizedName")}
           </Chip>
         </footer>
       </div>

@@ -1,11 +1,19 @@
 {
   "offerWise": "Offer Wise",
-  "offerWiseDesc": "Big data and AI help you choose the best offer for you.",
-  "notFound": "Sorry, the page you requested could not be found.",
+  "offerWiseDesc": "Big data and AI help you choose the best offer for you. ",
+  "notFound": "Sorry, the page you requested could not be found. ",
   "aboutMe": "About Me",
-  "footer_creator": "{{name}}",
+  "footer.creator": "{{name}}",
   "goToNotFound": "Go to 404 page",
   "goToAbout": "Go to About Me page",
   "goHome": "Go Home",
-  "github": "My GitHub"
+  "heresMy": "Here's my",
+  "github": "GitHub",
+  "jobPosition.FE": "Front-end Developer",
+  "personalInfo.localizedName": "William Tan",
+  "personalInfo.description": "Front-end developer, love coding, like to tinker, enjoy sharing. ",
+  "personalInfo.following": "Following",
+  "personalInfo.followers": "followers",
+  "action.follow": "Follow",
+  "action.unfollow": "Unfollow"
 }

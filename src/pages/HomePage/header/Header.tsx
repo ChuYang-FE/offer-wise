@@ -1,7 +1,14 @@
-import { Link, User } from "@nextui-org/react";
+import {
+  Link,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+  User,
+} from "@nextui-org/react";
 
 import myAvatar from "../../../images/avatar.jpg";
 import { InputChangeEvent } from "../../../types/common";
+import { UserGithubCard } from "../../About";
 import { DarkModeSwitch } from "./DarkModeSwitch";
 import { LanguageSelector } from "./LanguageSelector";
 
@@ -16,29 +23,27 @@ export const Header: React.FC<HeaderProps> = ({
 }) => {
   const { t } = useTranslation();
 
-  const [storageLanguage] = useLocalStorageState<string>("language", {
-    listenStorageChange: true,
-  });
-
-  const localizedName = storageLanguage === "zh-CN" ? "羊小羊" : "William Tan";
-
   return (
     <div className="flex w-full justify-between">
       <div>
-        <User
-          className="flex items-center justify-center"
-          name={localizedName}
-          description={
-            <Link href="https://chuyang-fe.github.io/" size="sm" isExternal>
-              {t("github")}
-            </Link>
-          }
-          avatarProps={{
-            src: myAvatar,
-            isBordered: true,
-            radius: "sm",
-          }}
-        />
+        <Popover showArrow placement="bottom">
+          <PopoverTrigger>
+            <User
+              className="flex items-center justify-center transition-transform"
+              as="button"
+              name={t("personalInfo.localizedName")}
+              description={t("jobPosition.FE")}
+              avatarProps={{
+                src: myAvatar,
+                isBordered: true,
+                radius: "sm",
+              }}
+            />
+          </PopoverTrigger>
+          <PopoverContent className="p-1">
+            <UserGithubCard />
+          </PopoverContent>
+        </Popover>
       </div>
       <div className="flex items-center justify-center">
         <DarkModeSwitch onDarkModeChange={onDarkModeChange} />
