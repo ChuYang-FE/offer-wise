@@ -60,7 +60,13 @@ export const UserGithubCard = () => {
         <p className="pl-px text-small text-default-500">
           {t("heresMy")}
           <Spacer x={0.5} isInline />
-          <Link href="https://chuyang-fe.github.io/" size="sm" isExternal>
+          <Link
+            isBlock
+            showAnchorIcon
+            href="https://chuyang-fe.github.io/"
+            size="sm"
+            isExternal
+          >
             {t("github")}
           </Link>
         </p>

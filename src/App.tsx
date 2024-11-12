@@ -38,25 +38,19 @@ function App() {
           isDarkMode ? "dark" : "light"
         } flex min-h-screen flex-col bg-background text-foreground`}
       >
-        <header className="flex w-full justify-between bg-slate-300 p-2">
+        <header>
           <Header
             onDarkModeChange={handleDarkModeChange}
             onLanguageChange={handleLanguageChange}
           />
         </header>
         <main className="flex grow flex-col p-2">
-          <section className="">
-            <div className="flex h-8 justify-center align-middle">
-              {t("offerWiseDesc")}
-            </div>
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/not-found" element={<NotFound />} />
-            </Routes>
-          </section>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/not-found" element={<NotFound />} />
+          </Routes>
           <section className="grow"></section>
-          <section className=""></section>
         </main>
         <footer className="flex w-full justify-center p-2">
           <Chip
