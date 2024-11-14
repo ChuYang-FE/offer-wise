@@ -64,9 +64,14 @@ export const Header: React.FC<HeaderProps> = ({
             {t("goToNotFound")}
           </Link>
         </NavbarItem>
-        <NavbarItem isActive={pathname === "/about"}>
-          <Link isBlock color="foreground" href="/about">
-            {t("goToAbout")}
+        <NavbarItem>
+          <Link
+            isBlock
+            isExternal
+            showAnchorIcon
+            href="https://chuyang-fe.github.io/about/"
+          >
+            {t("aboutMe")}
           </Link>
         </NavbarItem>
       </NavbarContent>
