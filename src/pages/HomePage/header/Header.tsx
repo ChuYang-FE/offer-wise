@@ -94,7 +94,7 @@ export const Header: React.FC<HeaderProps> = ({
                 }}
               />
             </PopoverTrigger>
-            <PopoverContent className="p-1">
+            <PopoverContent className="p-0">
               <UserGithubCard />
             </PopoverContent>
           </Popover>

@@ -1,6 +1,6 @@
 import { Select, SelectItem } from "@nextui-org/react";
 
-interface LanguageSeletorProps {
+interface LanguageSelectorProps {
   onLanguageChange: (lng: string) => void;
 }
 
@@ -21,7 +21,7 @@ const LANGUAGES = [
 
 export const LanguageSelector = ({
   onLanguageChange,
-}: LanguageSeletorProps) => {
+}: LanguageSelectorProps) => {
   const [storageLanguage] = useLocalStorageState<string>("language");
 
   return (

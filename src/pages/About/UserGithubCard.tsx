@@ -16,9 +16,13 @@ export const UserGithubCard = () => {
   const [isFollowed, setIsFollowed] = useState(false);
   const [myFollowers, setMyFollowers] = useState(0);
   const { t } = useTranslation();
+  const [isDarkMode] = useLocalStorageState<boolean>("dark-mode");
 
   return (
-    <Card shadow="none" className="max-w-[300px] border-none bg-transparent">
+    <Card
+      shadow="none"
+      className={`${isDarkMode ? "dark" : "light"} max-w-[300px]`}
+    >
       <CardHeader className="justify-between">
         <div className="flex gap-3">
           <Avatar isBordered radius="sm" size="lg" src={myAvatar} />
@@ -49,7 +53,7 @@ export const UserGithubCard = () => {
           {isFollowed ? t("action.unfollow") : t("action.follow")}
         </Button>
       </CardHeader>
-      <CardBody className="gap-2 px-3 py-0">
+      <CardBody className="gap-1 py-0">
         <p className="pl-px text-small text-default-500">
           {t("personalInfo.description")}
           <span aria-label="confetti" role="img">
