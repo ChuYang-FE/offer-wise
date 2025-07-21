@@ -10,6 +10,8 @@ import {
   PopoverTrigger,
   User,
 } from "@nextui-org/react";
+import { useTranslation } from "react-i18next";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import myAvatar from "../../../images/avatar.jpg";
 import OfferWiseIcon from "../../../offerWise.svg";

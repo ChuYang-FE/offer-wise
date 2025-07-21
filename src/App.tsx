@@ -1,4 +1,8 @@
 import { Avatar, Chip, NextUIProvider } from "@nextui-org/react";
+import { useLocalStorageState } from "ahooks";
+import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import { Route, Routes, useHref, useNavigate } from "react-router-dom";
 
 import { About, HomePage, NotFound } from "./pages";
 import { Header } from "./pages/HomePage/header";
@@ -20,7 +24,7 @@ function App() {
 
   useEffect(() => {
     i18n.changeLanguage(storageLanguage);
-  }, []);
+  }, [i18n, storageLanguage]);
 
   const handleLanguageChange = (lng: string) => {
     i18n.changeLanguage(lng);

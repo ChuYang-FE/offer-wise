@@ -1,4 +1,5 @@
 import { Switch } from "@nextui-org/react";
+import { useLocalStorageState } from "ahooks";
 
 import { InputChangeEvent } from "../../../types/common";
 
@@ -15,7 +16,7 @@ export const DarkModeSwitch = ({ onDarkModeChange }: DarkModeSwitchProps) => {
         defaultSelected={isDarkMode || false}
         size="lg"
         color="default"
-        thumbIcon={({ isSelected, className }) =>
+        thumbIcon={({ isSelected }) =>
           isSelected ? <MoonIcon /> : <SunIcon />
         }
         onChange={onDarkModeChange}

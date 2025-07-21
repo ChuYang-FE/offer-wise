@@ -9,6 +9,9 @@ import {
   Link,
   Spacer,
 } from "@nextui-org/react";
+import { useLocalStorageState } from "ahooks";
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import myAvatar from "../../images/avatar.jpg";
 
