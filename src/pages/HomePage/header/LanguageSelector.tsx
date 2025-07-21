@@ -1,4 +1,3 @@
-import { Select, SelectItem } from "@nextui-org/react";
 import { useLocalStorageState } from "ahooks";
 
 interface LanguageSelectorProps {
@@ -26,16 +25,17 @@ export const LanguageSelector = ({
   const [storageLanguage] = useLocalStorageState<string>("language");
 
   return (
-    <Select
-      className="w-32"
-      defaultSelectedKeys={[storageLanguage || LANGUAGES[0].value]}
-      disabledKeys={[LANGUAGES[2].value]}
-      onChange={(selected) => onLanguageChange(selected.target.value)}
+    <select
+      style={{ width: 120, height: 32 }}
+      value={storageLanguage || LANGUAGES[0].value}
+      onChange={(e) => onLanguageChange(e.target.value)}
       aria-label="Language Selector"
     >
       {LANGUAGES.map((language) => (
-        <SelectItem key={language.value}>{language.name}</SelectItem>
+        <option key={language.value} value={language.value}>
+          {language.name}
+        </option>
       ))}
-    </Select>
+    </select>
   );
 };

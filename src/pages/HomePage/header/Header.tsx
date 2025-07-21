@@ -1,22 +1,9 @@
-import {
-  Avatar,
-  Link,
-  Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-  User,
-} from "@nextui-org/react";
 import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import myAvatar from "../../../images/avatar.jpg";
 import OfferWiseIcon from "../../../offerWise.svg";
-import { InputChangeEvent } from "../../../types/common";
-import { UserGithubCard } from "../../About";
+import type { InputChangeEvent } from "../../../types/common";
 import { DarkModeSwitch } from "./DarkModeSwitch";
 import { LanguageSelector } from "./LanguageSelector";
 
@@ -35,73 +22,66 @@ export const Header: React.FC<HeaderProps> = ({
   const { pathname } = location;
 
   return (
-    <Navbar
-      maxWidth="full"
-      className=""
-      isBordered
-      onClick={() => navigate("/")}
-      // isMenuOpen={isMenuOpen}
-      // onMenuOpenChange={setIsMenuOpen}
+    <nav
+      style={{
+        width: "100%",
+        borderBottom: "1px solid #eee",
+        padding: 8,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+      }}
     >
-      <NavbarContent className="sm:flex" justify="start">
-        <NavbarBrand>
-          <Avatar
-            className="cursor-pointer gap-1 hover:opacity-80"
-            src={OfferWiseIcon}
-            size="md"
-            radius="sm"
-            isBordered
-            alt={t("offerWise")}
+      <div
+        style={{ display: "flex", alignItems: "center", cursor: "pointer" }}
+        onClick={() => navigate("/")}
+      >
+        <img
+          src={OfferWiseIcon}
+          alt={t("offerWise") as string}
+          style={{ width: 40, height: 40, borderRadius: 8, marginRight: 8 }}
+        />
+      </div>
+      <div style={{ display: "flex", gap: 16 }}>
+        <a
+          onClick={() => {
+            navigate("/");
+          }}
+        >
+          {t("goHome")}
+        </a>
+        <a
+          onClick={() => {
+            navigate("/not-found");
+          }}
+        >
+          {t("goToNotFound")}
+        </a>
+        <a
+          href="https://chuyang-fe.github.io/about/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {t("aboutMe")}
+        </a>
+      </div>
+      <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+        <DarkModeSwitch onDarkModeChange={onDarkModeChange} />
+        <LanguageSelector onLanguageChange={onLanguageChange} />
+        <div style={{ marginLeft: 16, position: "relative" }}>
+          <img
+            src={myAvatar}
+            alt="avatar"
+            style={{
+              width: 36,
+              height: 36,
+              borderRadius: "50%",
+              border: "1px solid #eee",
+              cursor: "pointer",
+            }}
           />
-        </NavbarBrand>
-      </NavbarContent>
-      <NavbarContent className="hidden gap-4 sm:flex" justify="center">
-        <NavbarItem isActive={pathname === "/"}>
-          <Link isBlock color="foreground" href="/">
-            {t("goHome")}
-          </Link>
-        </NavbarItem>
-        <NavbarItem isActive={pathname === "/not-found"}>
-          <Link isBlock color="foreground" href="/not-found">
-            {t("goToNotFound")}
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link
-            isBlock
-            isExternal
-            showAnchorIcon
-            href="https://chuyang-fe.github.io/about/"
-          >
-            {t("aboutMe")}
-          </Link>
-        </NavbarItem>
-      </NavbarContent>
-      <NavbarContent justify="end">
-        <NavbarItem className="flex items-center justify-center">
-          <DarkModeSwitch onDarkModeChange={onDarkModeChange} />
-          <LanguageSelector onLanguageChange={onLanguageChange} />
-        </NavbarItem>
-        <NavbarItem>
-          <Popover showArrow placement="bottom-end">
-            <PopoverTrigger>
-              <User
-                className="flex items-center justify-center transition-transform"
-                as="button"
-                name=""
-                avatarProps={{
-                  src: myAvatar,
-                  isBordered: true,
-                  radius: "sm",
-                }}
-              />
-            </PopoverTrigger>
-            <PopoverContent className="p-0">
-              <UserGithubCard />
-            </PopoverContent>
-          </Popover>
-        </NavbarItem>
-      </NavbarContent>
-    </Navbar>
+        </div>
+      </div>
+    </nav>
   );
 };

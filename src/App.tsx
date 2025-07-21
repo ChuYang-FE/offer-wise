@@ -1,12 +1,11 @@
-import { Avatar, Chip, NextUIProvider } from "@nextui-org/react";
 import { useLocalStorageState } from "ahooks";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { Route, Routes, useHref, useNavigate } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 
 import { About, HomePage, NotFound } from "./pages";
 import { Header } from "./pages/HomePage/header";
-import { InputChangeEvent } from "./types/common";
+import type { InputChangeEvent } from "./types/common";
 
 function App() {
   const navigate = useNavigate();
@@ -32,46 +31,46 @@ function App() {
   };
 
   const handleDarkModeChange = (event: InputChangeEvent) => {
+    console.log("event", event.target.checked);
     setIsDarkMode(event.target.checked);
   };
 
   return (
-    <NextUIProvider navigate={navigate} useHref={useHref}>
-      <div
-        className={`${
-          isDarkMode ? "dark" : "light"
-        } flex min-h-screen flex-col bg-background text-foreground`}
-      >
-        <header>
-          <Header
-            onDarkModeChange={handleDarkModeChange}
-            onLanguageChange={handleLanguageChange}
-          />
-        </header>
-        <main className="flex grow flex-col p-2">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/not-found" element={<NotFound />} />
-          </Routes>
-          <section className="grow"></section>
-        </main>
-        <footer className="flex w-full justify-center p-2">
-          <Chip
-            variant="flat"
-            avatar={
-              <Avatar
-                name={t("personalInfo.localizedName")}
-                size="sm"
-                getInitials={(name) => name.charAt(0)}
-              />
-            }
+    <div>
+      <header>
+        <Header
+          onDarkModeChange={handleDarkModeChange}
+          onLanguageChange={handleLanguageChange}
+        />
+      </header>
+      <main className="flex grow flex-col p-2">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/not-found" element={<NotFound />} />
+        </Routes>
+        <section className="grow"></section>
+      </main>
+      <footer className="flex w-full justify-center p-2">
+        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+          <span
+            style={{
+              display: "inline-block",
+              width: 24,
+              height: 24,
+              borderRadius: "50%",
+              background: "#eee",
+              textAlign: "center",
+              lineHeight: "24px",
+              fontWeight: "bold",
+            }}
           >
-            {t("personalInfo.localizedName")}
-          </Chip>
-        </footer>
-      </div>
-    </NextUIProvider>
+            {t("personalInfo.localizedName").charAt(0)}
+          </span>
+          <span>{t("personalInfo.localizedName")}</span>
+        </div>
+      </footer>
+    </div>
   );
 }
 
