@@ -49,27 +49,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/not-found" element={<NotFound />} />
         </Routes>
-        <section className="grow"></section>
       </main>
-      <footer className="flex w-full justify-center p-2">
-        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          <span
-            style={{
-              display: "inline-block",
-              width: 24,
-              height: 24,
-              borderRadius: "50%",
-              background: "#eee",
-              textAlign: "center",
-              lineHeight: "24px",
-              fontWeight: "bold",
-            }}
-          >
-            {t("personalInfo.localizedName").charAt(0)}
-          </span>
-          <span>{t("personalInfo.localizedName")}</span>
-        </div>
-      </footer>
     </div>
   );
 }

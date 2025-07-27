@@ -10,13 +10,5 @@ interface DarkModeSwitchProps {
 export const DarkModeSwitch = ({ onDarkModeChange }: DarkModeSwitchProps) => {
   const [isDarkMode] = useLocalStorageState<boolean>("dark-mode");
 
-  return (
-    <input
-      type="checkbox"
-      checked={isDarkMode || false}
-      onChange={onDarkModeChange}
-      style={{ width: 40, height: 24 }}
-      aria-label="Dark mode switch"
-    />
-  );
+  return <div>Dark mode switch placeholder</div>;
 };
