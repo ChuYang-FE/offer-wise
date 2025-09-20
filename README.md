@@ -1,4 +1,4 @@
-# Offer  智选 - Offer Wise
+# Offer  智选 - Offer Wise （⚠️ 仓库已废弃）
 
 大数据和人工智能助你选出最适合你的 Offer。
 
